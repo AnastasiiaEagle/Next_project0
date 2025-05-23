@@ -1,6 +1,6 @@
 'use client'
 import { useState } from "react";
-import AuthForm from "../components/AuthForm/AuthForm";
+import AuthForm from "../../components/AuthForm/AuthForm";
 
 
 export default function Auth() {

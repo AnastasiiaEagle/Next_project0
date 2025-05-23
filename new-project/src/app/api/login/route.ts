@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { registerUser } from "../../../services/authService";
+import { loginUser, registerUser } from "../../../services/authService";
 
 export async function POST(req: Request) {
     try {
@@ -13,7 +13,7 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: 'Імʼя та email обовʼязкові' }, { status: 400 });
         }
 
-        const user = await registerUser(body)
+        const user = await loginUser(body)
         return NextResponse.json(user, {status: 201})
     } catch (error) {
         console.log('Помилка: ', error)
